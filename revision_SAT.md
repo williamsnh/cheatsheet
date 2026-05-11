@@ -75,6 +75,15 @@ candump -l vcan0
 
 # Rejouer un log
 canplayer -I fichier.log vcan0
+
+# Gateway (passerelle du physique au virtuel)
+cangw -A -s can0 -d vcan3 -e -f 123:C00007FF
+-A #Add new rule
+-s #source can-bus
+-d #destination can-bus
+-e #echo sent frames = redirection
+-f #identifier filter
+
 ```
 
 > 💡 **Règle du filtre** : `<received_id> & mask == can_id & mask`

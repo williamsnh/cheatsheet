@@ -53,6 +53,15 @@ candump vcan0
 # Envoyer une trame : ID#DATA (hex)
 cansend vcan0 123#F0A1DD03
 
+# Envoyer une trame en 2.0B
+cansend vcan0 1F334455#1122334455667788
+
+# Envoyer une trame en CAN-FD
+cansend vcan0 123##1.0102030405060708090A0B0C
+
+# Envoyer une trame en Remote
+cansend vcan0 123#R
+
 # Générer des trames aléatoires (utile pour tester les filtres)
 cangen vcan0
 

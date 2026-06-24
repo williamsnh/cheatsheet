@@ -2,11 +2,10 @@
 #include "preinit.h"
 #endif
 
-#include "drv_spi_master.h"
-#include "drv_digital_out.h"
-#include "drv_uart.h"
-#include "MikroSDK.Board"   // fournit USB_UART_TX / USB_UART_RX pour ta carte
-#include "delays.h"
+#include "MikroSDK.Driver.SPI.Master"
+#include "MikroSDK.Driver.GPIO.Out"
+#include "MikroSDK.Driver.UART"
+#include "MikroSDK.Board"
 
 // ── Pins Mikrobus 1 sur UNI-DS v8 ──────────────────────────
 #define MIKROBUS1_SCK   GPIO_PA5
@@ -162,9 +161,9 @@ int main(void) {
     mb1_print("\r\n");
 
     if (rev == 0x05 || rev == 0x06) {
-        mb1_print(">>> SPI OK - ENC28J60 repond correctement !\r\n");
+        mb1_print(">>> SPI OK - ENC28J60 answered correctly !\r\n\n");
     } else {
-        mb1_print(">>> ERREUR - valeur inattendue, verifier le cablage\r\n");
+        mb1_print(">>> ERREUR - unexpected value, check the wiring\r\n");
     }
 
     while (1) {

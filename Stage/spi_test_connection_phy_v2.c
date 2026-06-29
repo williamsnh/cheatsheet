@@ -456,7 +456,7 @@ int main(void) {
 
     // LINK status final
     if (high & 0x04) {
-        mb1_print(">>> LINK UP - cable Ethernet detecte !\r\n");
+        mb1_print(">>> LINK UP - cable Ethernet detected!\r\n");
     } else {
         mb1_print(">>> LINK DOWN - verifier le cable RJ45\r\n");
     }
